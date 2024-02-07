@@ -1,0 +1,29 @@
+.padding-right {
+    margin-right: 30px;
+}
+
+.small-right-padding {
+    margin-right: 5px;
+}
+
+.wd-modules > li > ul > li {
+    border-left: 2px solid green;
+}
+
+.week-0 {
+    background-color: #f0f0f0 !important;
+    border-left: #f0f0f0 !important;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.module-button {
+    color: white;
+    background-color: red;
+}

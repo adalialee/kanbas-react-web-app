@@ -1,0 +1,158 @@
+.wd-modules,
+.wd-modules * {
+    border-radius: 0%;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.wd-modules {
+    margin: 5px;
+}
+
+.wd-modules > li {
+    background-color: lightgray;
+    border: 1px solid gray !important;
+    border-left: none !important;
+}
+
+.wd-modules > li > div {
+    padding: 6px;
+    border-left: 1px solid gray !important;
+}
+
+.wd-modules > li > ul > li {
+    padding: 5px;
+    border-top: 1px solid gray !important;
+    border-left: 2px solid green;
+}
+
+.wd-modules > li {
+    margin-bottom: 20px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.left-align-text {
+    text-align: left;
+}
+
+.icon-padding-right {
+    margin-right: 5px;
+}
+
+.published-button {
+    color: white;
+    background-color: green;
+}
+
+.bottom-padding {
+    margin-bottom: 5px;
+}
+
+.grid-row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.half {
+    width: 50%;
+    flex-grow: 1;
+}
+
+.ten {
+    width: 10%;
+    float: left;
+}
+
+.ninety {
+    width: 90%;
+    float: left;
+}
+
+.top-padding {
+    margin-top: 5px;
+}
+
+.float-right {
+    float: right;
+}
+
+.green {
+    color: green;
+}
+
+.module-button {
+    color: white;
+    background-color: red;
+}
+
+.small-size {
+    font-size: 10px;
+}
+
+.wd-navigation li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.padding-right {
+    margin-right: 30px;
+}
+
+.small-right-padding {
+    margin-right: 5px;
+}
+
+.wd-modules > li > ul > li {
+    border-left: 2px solid green;
+}
+
+.week-0 {
+    background-color: #f0f0f0 !important;
+    border-left: #f0f0f0 !important;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.module-button {
+    color: white;
+    background-color: red;
+}
+
+.medium {
+    width: 200px;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.float-left {
+    float: left;
+}
+
+.margin-right {
+    margin-right: 25px;
+}
+
+.black {
+    color: black;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: center;
+}

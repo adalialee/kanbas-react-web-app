@@ -1,0 +1,8 @@
+.left-margin {
+    margin-left: 50px;
+}
+
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+}
