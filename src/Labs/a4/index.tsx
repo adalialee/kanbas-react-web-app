@@ -1,4 +1,4 @@
-import JavaScript from "/Users/adalialee/2024/spring/webdev/kanbas-react-web-app/src/Labs/a3/JavaScript";
+import JavaScript from "../a3/JavaScript";
 function Assignment4() {
     return (
         <div className="container">
