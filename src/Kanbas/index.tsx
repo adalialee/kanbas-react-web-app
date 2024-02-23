@@ -1,7 +1,7 @@
 import {Routes, Route, Navigate, redirect} from "react-router-dom";
 import Nav from "../Nav";
 import KanbasNavigation from "./Navigation";
-import "/Users/adalialee/2024/spring/webdev/kanbas-react-web-app/src/Kanbas/Navigation/index.css";
+import "./index.css";
 import Dashboard from "./Dashboard";
 import Courses from "./Courses";
 import {useLocation, Link} from "react-router-dom";
@@ -76,7 +76,6 @@ function Kanbas() {
                         <div className="dropdown">
                             <button className="btn btn-dark dropdown-toggle float-right" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             </button>
-                            
                             <ul className="dropdown-menu bar">
                             <FaTimes className="float-right"/>
                                 {links2.map((link, index) => (
