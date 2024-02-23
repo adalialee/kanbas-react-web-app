@@ -1,0 +1,27 @@
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+    margin-left: 50px !important;
+}
+
+.add-assignment {
+    color: white;
+    background-color: red;
+}
+
+.float-right {
+    float: right;
+}
+
+.top-button {
+    border-radius: 10px;
+    padding: 2px;
+    background-color: #E8E8E8;
+}
+
+.top {
+    margin-top: 100px;
+}
