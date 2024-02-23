@@ -85,25 +85,6 @@ function Kanbas() {
                                 ))}
                             </ul>
                         </div>
-                        
-                        {/* <div className="dropdown">
-                            <button className="btn btn-dark dropdown-toggle float-right" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                           
-                            </button>
-                            
-                            <ul className="wd-navigation d-none d-sm-block">
-                                <label className="small">202410_Fall 2023 Semest...</label>
-                                {links2.map((link, index) => {
-                                    return (
-                                        <li key={index} className={pathname.includes(link) ? "wd-active" : ""}>
-                                            <Link to={link}>
-                                                {link}
-                                            </Link>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </div> */}
 
                         <FaGlasses className="me-2 float-right" />
 

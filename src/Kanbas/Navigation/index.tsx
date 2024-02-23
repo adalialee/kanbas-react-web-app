@@ -2,6 +2,7 @@ import React from "react";
 import {Link, useLocation} from "react-router-dom";
 import {FaTachometerAlt, FaRegUserCircle, FaBook, FaRegCalendarAlt,
   FaEnvelope, FaShareSquare, FaQuestionCircle, FaClock, FaTv} from "react-icons/fa";
+import "./index.css";
 
 function KanbasNavigation() {
     const links = [

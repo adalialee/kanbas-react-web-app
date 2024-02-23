@@ -2,6 +2,7 @@ import React from 'react'; // Import React
 import { Link, useLocation } from "react-router-dom";
 import { FaEyeSlash } from "react-icons/fa";
 import "../Navigation/index.css";
+import "./index.css";
 
 function CourseNavigation() {
     const links = ["Home", "Modules", "Piazza", "Zoom", "Assignments", "Quizzes", "Grades", "People", "Panopto Video", "Discussions", "Announcements", "Pages", "Files"];
