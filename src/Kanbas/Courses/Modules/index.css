@@ -2,3 +2,60 @@
     margin-top: 100px;
     flex-grow: 1;
 }
+
+.padding-right {
+    margin-right: 30px;
+}
+
+.small-right-padding {
+    margin-right: 5px;
+}
+
+.wd-modules > li > ul > li {
+    border-left: 2px solid green;
+}
+
+.week-0 {
+    background-color: #f0f0f0 !important;
+    border-left: #f0f0f0 !important;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.module-button {
+    color: white;
+    background-color: red;
+}
+
+.add-button {
+    background-color: darkgreen;
+    color: white;
+    padding: 3px;
+    float: right;
+}
+
+.update-button {
+    background-color: gold;
+    padding: 3px;
+    float: right;
+    margin-right: 10px;
+}
+
+.edit-button {
+    background-color: blue;
+    color: white;
+    float: right;
+    margin-right: 10px;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    float: right;
+}

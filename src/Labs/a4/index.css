@@ -1,0 +1,42 @@
+#up-button {
+    background-color: darkgreen;
+    color: white;
+    width: 55px;
+    height: 45px;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+#down-button {
+    background-color: darkred;
+    color: white;
+    width: 65px;
+    height: 45px;
+    border-radius: 10px;
+}
+
+#add-element-button {
+    background-color: darkgreen;
+    color: white;
+    width: 120px;
+    height: 45px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.numbers ul {
+    text-decoration: none;
+}
+
+.numbers li {
+    text-decoration: none;
+}
+
+#delete-button {
+    background-color: darkred;
+    color: white;
+    width: 80px;
+    height: 45px;
+    border-radius: 10px;
+    margin-left: 50px;
+}
