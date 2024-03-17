@@ -76,7 +76,7 @@ function ModuleList() {
             </li>
         </div>
         <ul className="list-group wd-modules">
-          <li className="list-group-item">
+          <li className="list-group-item" style={{backgroundColor: 'white'}}>
             <button onClick={() => dispatch(addModule({ ...module, course: courseId }))}
               className="add-button" style={{padding: '3px'}}>
               Add
@@ -91,7 +91,7 @@ function ModuleList() {
               onChange={(e) => dispatch(setModule({
                 ...module, name: e.target.value
               }))}
-            />
+            /><br/>
             <textarea value={module.description}
               onChange={(e) => dispatch(setModule({
                 ...module, description: e.target.value
@@ -102,7 +102,8 @@ function ModuleList() {
             .map((module, index) => (
             <li
               className="list-group-item"
-              key={index}>
+              key={index}
+              style={{backgroundColor: 'white'}}>
               <div className="left">
                 <span className="float-end">
                   <FaCheckCircle className="text-success" />
@@ -110,7 +111,7 @@ function ModuleList() {
                   <FaEllipsisV className="ms-2" />
                 </span>
                 <FaEllipsisV className="me-2" />
-                {module.name}
+                {module.name}<br/>
                 <p>{module.description}</p>
               </div>
               <button
