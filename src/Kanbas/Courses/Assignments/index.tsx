@@ -1,12 +1,26 @@
 import React from "react";
 import { FaCheckCircle, FaPenSquare, FaSearch, FaChevronRight, FaEllipsisV, FaPlusCircle } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { assignments } from "../../Database";
 import "./index.css";
 function Assignments() {
   const { courseId } = useParams();
+  const COURSES_API = "http://localhost:4000/api/courses";
+  const [course, setCourse] = useState<any>({ _id: "" });
+  const findCourseById = async (courseId?: string) => {
+    const response = await axios.get(
+      `${COURSES_API}/${courseId}`
+    );
+    setCourse(response.data);
+  };
+
   const assignmentList = assignments.filter(
     (assignment) => assignment.course === courseId);
+    useEffect(() => {
+        findCourseById(courseId);
+    }, [courseId]); 
   return (
     <>
         <div className="top">

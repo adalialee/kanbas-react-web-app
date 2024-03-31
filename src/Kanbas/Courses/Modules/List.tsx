@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import { FaEllipsisV, FaGripVertical, FaChevronRight, FaCheckCircle, FaPlusCircle, FaChevronDown, FaPlus} from "react-icons/fa";
 import { useParams } from "react-router";
@@ -10,15 +10,38 @@ import {
   deleteModule,
   updateModule,
   setModule,
+  setModules
 } from "./reducer";
+import * as client from "./client";
 import { KanbasState } from "../../store";
+import { findModulesForCourse, createModule } from "./client";
 function ModuleList() {
     const { courseId } = useParams();
+    const handleAddModule = () => {
+      createModule(courseId, module).then((module) => {
+        dispatch(addModule(module));
+      });
+    };  
     const moduleList = useSelector((state: KanbasState) =>
       state.modulesReducer.modules);
     const module = useSelector((state: KanbasState) =>
       state.modulesReducer.module);
     const dispatch = useDispatch();
+    useEffect(() => {
+      findModulesForCourse(courseId)
+        .then((modules) =>
+          dispatch(setModules(modules))
+      );
+    }, [courseId]);
+    const handleDeleteModule = (moduleId: string) => {
+      client.deleteModule(moduleId).then((status) => {
+        dispatch(deleteModule(moduleId));
+      });
+    };  
+    const handleUpdateModule = async () => {
+      const status = await client.updateModule(module);
+      dispatch(updateModule(module));
+    };  
     return (
       <>
         <div>
@@ -77,12 +100,12 @@ function ModuleList() {
         </div>
         <ul className="list-group wd-modules">
           <li className="list-group-item" style={{backgroundColor: 'white'}}>
-            <button onClick={() => dispatch(addModule({ ...module, course: courseId }))}
+            <button onClick={handleAddModule}
               className="add-button" style={{padding: '3px'}}>
               Add
             </button>
             <button 
-              onClick={() => dispatch(updateModule(module))}
+              onClick={handleUpdateModule}
               className="update-button" style={{padding: '3px', marginRight: '10px'}}>
               Update
             </button>
@@ -115,7 +138,7 @@ function ModuleList() {
                 <p>{module.description}</p>
               </div>
               <button
-                onClick={() => dispatch(deleteModule(module._id))}
+                onClick={() => handleDeleteModule(module._id)}
                 className="delete-button" style={{padding: '3px'}}>
                   Delete
               </button>

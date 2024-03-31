@@ -4,7 +4,9 @@ import KanbasNavigation from "./Navigation";
 import "./index.css";
 import Dashboard from "./Dashboard";
 import Courses from "./Courses";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import { courses } from "./Database";
 import {useLocation, Link} from "react-router-dom";
 import store from "./store";
@@ -18,18 +20,38 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 function Kanbas() {
-    const [_courses, setCourses] = useState<any[]>(courses);
-    const [course, setCourse] = useState({
-        _id: "1234", name: "New Course", number: "New Number",
-        startDate: "2023-09-1", endDate: "2023-12-15",
-    });
-    const addNewCourse = () => {
-        setCourses([...courses, { ...course, _id: new Date().getTime().toString() }]);
+    const { courseId } = useParams();
+    const [_courses, setCourses] = useState<any[]>([]);
+    const COURSES_API = "http://localhost:4000/api/courses";
+    const findAllCourses = async () => {
+        const response = await axios.get(COURSES_API);
+        setCourses(response.data);
     };
-    const deleteCourse = (courseId: any) => {
-        setCourses(courses.filter((course) => course._id !== courseId));
+    useEffect(() => {
+        findAllCourses();
+    }, []);
+    const [course, setCourse] = useState<any>({ _id: "" });
+    const findCourseById = async (courseId?: string) => {
+        const response = await axios.get(
+        `${COURSES_API}/${courseId}`
+        );
+        setCourse(response.data);
+    };   
+    const addNewCourse = async () => {
+        const response = await axios.post(COURSES_API, course);
+        setCourses([...courses, response.data]);
     };
-    const updateCourse = () => {
+    const deleteCourse = async (courseId: any) => {
+        const response = await axios.delete(
+            `${COURSES_API}/${courseId}`
+        );      
+        setCourses(courses.filter((c) => c._id !== courseId));
+    };
+    const updateCourse = async () => {
+        const response = await axios.put(
+            `${COURSES_API}/${course._id}`,
+            course
+        );     
         setCourses(
             _courses.map((c) => {
                 if (c._id === course._id) {
@@ -66,7 +88,6 @@ function Kanbas() {
 
     const {pathname} = useLocation();
     // const links2 = ["Home", "Modules", "Piazza", "Zoom", "Assignments", "Quizzes", "Grades", "People", "Panopto Video", "Discussions", "Announcements", "Pages", "Files"];
-
     return(
         <Provider store={store}>
             <div className="d-flex">
