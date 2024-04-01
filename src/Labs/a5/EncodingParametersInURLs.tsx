@@ -39,10 +39,10 @@ function EncodingParametersInURLs() {
       <input value={result} type="number" readOnly />
       <h3>Fetch Result</h3>
       <button onClick={() => fetchSum(a, b)} >
-        Fetch Sum of {a} + {b}
+        Fetch the Sum of {a} + {b}
       </button><br/>
       <button onClick={() => fetchSubtraction(a, b)} >
-        Fetch Substraction of {a} - {b}
+        Fetch the Substraction of {a} - {b}
       </button>
       <h3>Path Parameters</h3>
       <a href={`${API_BASE}/a5/add/${a}/${b}`}>
