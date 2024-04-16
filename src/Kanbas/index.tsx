@@ -1,5 +1,6 @@
 import {Routes, Route, Navigate, redirect} from "react-router-dom";
 import Nav from "../Nav";
+import Account from "./Account";
 import KanbasNavigation from "./Navigation";
 import "./index.css";
 import Dashboard from "./Dashboard";
@@ -22,7 +23,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 const API_BASE = process.env.REACT_APP_API_BASE;
 function Kanbas() {
     const { courseId } = useParams();
-    const [_courses, setCourses] = useState<any[]>([]);
+    const [courses, setCourses] = useState<any[]>([]);
     const COURSES_API = `${API_BASE}/api/courses`;
     const findAllCourses = async () => {
         const response = await axios.get(COURSES_API);
@@ -54,7 +55,7 @@ function Kanbas() {
             course
         );     
         setCourses(
-            _courses.map((c) => {
+            courses.map((c) => {
                 if (c._id === course._id) {
                     return course;
                 } else {
@@ -145,10 +146,10 @@ function Kanbas() {
                         
                         <Routes>
                             <Route path="/" element={<Navigate to="Dashboard"/>}/>
-                            <Route path="Account" element={<h1>Account</h1>}/>
+                            <Route path="/Account/*" element={<Account/>}/>
                             <Route path="Dashboard" element={
                                 <Dashboard
-                                    courses={_courses}
+                                    courses={courses}
                                     course={course}
                                     setCourse={setCourse}
                                     addNewCourse={addNewCourse}
@@ -156,7 +157,7 @@ function Kanbas() {
                                     updateCourse={updateCourse}/>
                             } />
                             <Route path="Courses/:courseId/*" element={
-                                <Courses _courses={_courses} />} />
+                                <Courses _courses={courses} />} />
                         </Routes>
                     </div>
                 </div>
